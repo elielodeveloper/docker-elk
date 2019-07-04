@@ -2,6 +2,22 @@ version: '2'
 
 services:
 
+  nginx:
+    build:
+      context: nginx/
+    volumes:
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/config/nginxconfig.io:/etc/nginx/nginxconfig.io
+      - ./nginx/config/sites-enabled/localhost.conf:/etc/nginx/sites-enabled/localhost.conf
+      - ./nginx/config/sites-available/localhost.conf:/etc/nginx/sites-available/localhost.conf
+
+    ports:
+      - "8080:80"
+    networks:
+      - elk
+    depends_on:
+      - kibana
+
   elasticsearch:
     build:
       context: elasticsearch/
