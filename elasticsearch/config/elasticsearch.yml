@@ -16,3 +16,20 @@ discovery.type: single-node
 xpack.license.self_generated.type: trial
 xpack.security.enabled: true
 xpack.monitoring.collection.enabled: true
+
+#shasaaaam
+xpack.security.transport.ssl.enabled: true
+
+# Transport layer
+xpack.security.transport.ssl.verification_mode: full
+xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/certs/ca/elasticsearch.key
+xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/certs/ca/elasticsearch.crt
+xpack.security.transport.ssl.certificate_authorities: [ "/usr/share/elasticsearch/config/certs/ca/ca.crt" ]
+
+# HTTP layer
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.verification_mode: full
+xpack.security.http.ssl.key: /usr/share/elasticsearch/config/certs/ca/elasticsearch.key
+xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/certs/ca/elasticsearch.crt
+xpack.security.http.ssl.certificate_authorities: [ "/usr/share/elasticsearch/config/certs/ca/ca.crt" ]
+
